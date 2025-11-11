@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+/* Style the input object */
+input[type="text"] {
+  padding: 10px;
+  border: 2px black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Style the button object */
+button {
+  padding: 10px 20px;
+  background-color: #be0403;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #a30302;
+}
+
+/* Style the paragraph object */
+p {
+  padding: 10px;
+  text-align: center;
+}
+/* Style the container object */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto minmax(min-content, 60vh) auto;
+  /* Adjust the 60vh to your preference */
+  grid-template-areas:
+    "header header header"
+    ". main-content ."
+    "footer footer footer";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background: #be0403;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  /* Center horizontally */
+  justify-content: center;
+  /* Center vertically */
+  align-items: center;
+}
+
+.main-content {
+  text-align: center;
+  grid-area: main-content;
+  display: flex;
+  flex-direction: column;
+  /* Stack the items vertically */
+  justify-content: center;
+  align-items: center;
+  /* padding: 2rem; */
+
+  max-height: 100%;
+  /* Ensure the main content doesn't exceed its grid area */
+  overflow: auto;
+  /* Add scroll if content overflows */
+}
+
+footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  flex-wrap: wrap;
+  /* Allows logos to wrap onto next line at small viewport sizes */
+  padding: 50px 0px;
+}
+
+.logo {
+  margin: 0 1rem;
+  flex: 0 1 auto;
+  max-height: 100px;
+  /* Adjust this value to make the logos smaller */
+}
+
+.logo--uni {
+  width: auto;
+  max-width: 70%;
+}
+
+.logo--stemm {
+  object-fit: contain;
+  height: 100%;
+  width: auto;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main-content"
+      "footer";
+  }
+
+  .header,
+  footer {
+    text-align: center;
+  }
+
+  /* When viewport is small, stack the logos in a column */
+  footer {
+    flex-direction: column;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    margin: 0.5rem 0;
+    max-width: 100%;
+  }
+}

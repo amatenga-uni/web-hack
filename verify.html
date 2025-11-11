@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Verify</title>
+  <style>
+    
+  </style>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>The Wonderful and Wacky Waikato Web Hack</h1>
+    </header>
+
+    <div class="main-content">
+      <h1>Verify your combination!</h1>
+      <p>
+        Congratulations! You should now have all 8 digits of the combination.
+        To verify you've got the combination in the correct order, enter it
+        below and click "Verify".
+        <br />
+        <br />If it's correct, you can enter it into the safe, but if it's
+        incorrect then you can try again.
+      </p>
+
+      <input type="text" id="combination" placeholder="Enter combination here ..." />
+      
+      <button onclick="verifyCombination()"><h4>Verify</h4></button>
+
+    </div>
+    <!-- Footer code here -->
+    <footer>
+      <img class="logo logo--uni" src="images/waikato_uni_logo.svg" alt="Waikato Logo" />
+      <img class="logo logo--stemm" src="images/tohu_matua_white.png" alt="Pūhoro STEMM Academy Logo" />
+    </footer>
+
+    <script>
+      function verifyCombination() {
+        // The correct combination has been hashed in order to hide it from the user
+        var input = document
+          .getElementById("combination")
+          .value.toString()
+          .hashCode();
+        var combination = 1852585700;
+        if (input === combination) {
+          alert("Combination is correct!");
+        } else {
+          alert("Combination is incorrect, please try again.");
+        }
+      }
+
+      String.prototype.hashCode = function () {
+        var hash = 0,
+          i,
+          chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+          chr = this.charCodeAt(i);
+          hash = (hash << 5) - hash + chr;
+          hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+      };
+    </script>
+</body>
+
+</html>

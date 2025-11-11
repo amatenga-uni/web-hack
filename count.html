@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Page 5</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>The Wonderful and Wacky Waikato Web Hack</h1>
+      </header>
+      <div class="main-content">
+        <h1>Counting Is Fun!</h1>
+        <p>
+          Great work on making it this far. To get to the next page requires
+          finding and using the special number.
+        </p>
+        <p id="counterParagraph">What to do?</p>
+
+        <button onclick="checkCount();" id="countButton"><h4>Check</h4></button>
+        <div id="myDiv"></div>      
+    </div>
+
+    <footer>
+      <img
+        class="logo logo--uni"
+        src="images/waikato_uni_logo.svg"
+        alt="Waikato Logo"
+      />
+      <img
+        class="logo logo--stemm"
+        src="images/tohu_matua_white.png"
+        alt="Pūhoro STEMM Academy Logo"
+      />
+    </footer>
+
+    <script>
+      function checkCount() {
+        // Find the total number of characters in the text contained in
+        // the paragraph with id="counterParagraph".
+        var paragraph = document.getElementById("counterParagraph").innerText;
+        var count = paragraph.length;
+
+        var specialNumber = 15;
+
+        // Check if the count is equal to the special number.
+        if (count == specialNumber) {
+          // If the count is correct, create a link to the next page
+          var mydiv = document.getElementById("myDiv");
+          var link = document.createElement("a");
+          link.setAttribute("href", "display_none.html");
+          link.innerText = "Click here to go to the next page";
+          mydiv.appendChild(link);
+        }
+      }
+    </script>
+  </body>
+</html>

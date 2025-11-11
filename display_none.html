@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Page 6</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <style>
+    textarea {
+      display: none;
+    }
+  </style>
+  <div class="container">
+    <header class="header">
+      <h1>The Wonderful and Wacky Waikato Web Hack</h1>
+    </header>
+    <div class="main-content">
+      <h1>Almost There!</h1>
+      <p>
+        You are becoming a pro at this... but don't get too confident. This one is tricky.
+      </p>
+
+      <p>
+        <textarea cols="30"
+          rows="14">────────────────────────────────██████████████─██████████████──██░░░░░░░░░░██─██░░░░░░░░░░██──██░░██████████─██████████░░██──██░░██─────────────────██░░██──██░░██████████─██████████░░██──██░░░░░░░░░░██─██░░░░░░░░░░██──██████████░░██─██████████░░██──────────██░░██─────────██░░██──██████████░░██─██████████░░██──██░░░░░░░░░░██─██░░░░░░░░░░██──██████████████─██████████████────────────────────────────────</textarea>
+      </p>
+
+      <p><input type="number" id="inputGuessNumber"></p>
+
+      <p><button onclick="checkNumber();" id="checkButton"><h4>Check</h4></button></p>
+
+      <div id="myDiv">
+      </div>
+
+      <p>When you have figured out the special number, <a href="verify.html">click here</a> to go to the final page.</p>
+    </div>
+    <footer>
+      <img class="logo logo--uni" src="images/waikato_uni_logo.svg" alt="Waikato Logo" />
+      <img class="logo logo--stemm" src="images/tohu_matua_white.png" alt="Pūhoro STEMM Academy Logo" />
+    </footer>
+  </div>
+
+  <script>
+    function checkNumber() {
+      // Get the person's guess
+      var guess = document.getElementById("inputGuessNumber").value;
+
+      // The correct number is hidden using a 'hash', so we need to 'hash'
+      // the guess before we compare
+      var hashedGuess = guess.toString().hashCode();
+
+      // Tell the user if their guess was correct
+      var mydiv = document.getElementById("myDiv");
+      if (hashedGuess == 1694) {
+        mydiv.innerText = "You are correct!";
+      } else {
+        mydiv.innerText = "Please try again...";
+      }
+    }
+
+    // This is a function for hiding things
+    String.prototype.hashCode = function () {
+      var hash = 0,
+        i, chr;
+      if (this.length === 0) return hash;
+      for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    }
+  </script>
+</body>
+
+</html>

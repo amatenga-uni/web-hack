@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Page 4</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>The Wonderful and Wacky Waikato Web Hack</h1>
+      </header>
+      <div class="main-content">
+        <h1>That's alot of clicking!</h1>
+
+        <p>
+          Well done for making it this far! This one might be a bit tricky. If
+          you're struggling FOUR any reason at all, don't forget to use the
+          inspector tool.
+        </p>
+
+        <a id="clickableElement">CLICK ME</a>
+      </div>
+      <footer>
+        <img
+          class="logo logo--uni"
+          src="images/waikato_uni_logo.svg"
+          alt="Waikato Logo"
+        />
+        <img
+          class="logo logo--stemm"
+          src="images/tohu_matua_white.png"
+          alt="Pūhoro STEMM Academy Logo"
+        />
+      </footer>
+
+      <script>
+        var clickCount = 0;
+        var clickableElement = document.getElementById("clickableElement");
+
+        clickableElement.onclick = function () {
+          // Add one to the click counter
+          clickCount++;
+          // If you click the anchor tag the right number of times,
+          if (clickCount == 4) {
+            // Take you to the next page.
+            clickableElement.href = "count.html";
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>
