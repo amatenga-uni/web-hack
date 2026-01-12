@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width" />
   <title>Verify</title>
   <style>
-    
+    #extension {
+      display: none;
+      border: 6px solid black;
+      margin: 25px;
+      border-radius: 10px;
+    }
   </style>
   <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
@@ -32,6 +37,13 @@
       
       <button onclick="verifyCombination()"><h4>Verify</h4></button>
 
+      <div id="extension">
+        <p>Congratulations on completing The Wonderful and Wacky Waikato Web Hack!</p>
+        <p>But wait... There's more...</p>
+        <p>We have created some extension challenges that dig a little deeper into web development.</p>
+        <p><a href="">Click here</a> to begin the extension challenges.</p>
+      </div>
+
     </div>
     <!-- Footer code here -->
     <footer>
@@ -40,6 +52,8 @@
     </footer>
 
     <script>
+      let ext_visible = false;
+
       function verifyCombination() {
         // The correct combination has been hashed in order to hide it from the user
         var input = document
@@ -49,9 +63,19 @@
         var combination = 1852585700;
         if (input === combination) {
           alert("Combination is correct!");
+          showExtension();
         } else {
           alert("Combination is incorrect, please try again.");
         }
+      }
+
+      function showExtension() {
+        if (ext_visible) {
+          return;
+        }
+        ext_visible = true;
+        let ext = document.getElementById("extension");
+        ext.style.display = "block";
       }
 
       String.prototype.hashCode = function () {
