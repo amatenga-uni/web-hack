@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>More JS</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="js/keys.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>The Wonderful and Wacky Waikato Web Hack (EXTENSION)</h1>
+      </header>
+      <div class="main-content">
+        <h1>URL Parameters!</h1>
+        <p>URL stands for Uniform Resource Locator. It tells the browser where to find specific resources (e.g. webpage, image, video). URL parameters are extra pieces of information added to the end of a URL, to pass data to a website. This is very userful for things like creating customised webpage content, filtering, and sorting.</p>
+        <p>URL parameters appear after a questions mark "?". Each parameter has a name (or key) and a value. The name and value are separated by an equals sign "=". For example,</p>
+        <div class="codeblock">
+<pre>
+name=aaron
+</pre>
+        </div>
+        <p>Multiple parameters are separated by an amphersand "&". For example,</p>
+        <div class="codeblock">
+<pre>
+firstname=aaron&lastname=matenga
+</pre>
+        </div>
+
+        <p>The base URL points to the resource, then you have a questions mark, then you have the URL parameters. So, a full URL could look something like this</p>
+        <div class="codeblock">
+<pre>
+https://amatenga-uni.github.io/web-hack/urls.html?firstname=aaron&lastname=matenga
+</pre>
+        </div>
+
+        <br>
+        <button onclick="urlQueryParams()">Check</button>
+        
+        <p id="next"></p>
+    </div>
+
+
+    <footer>
+      <img
+        class="logo logo--uni"
+        src="images/waikato_uni_logo.svg"
+        alt="Waikato Logo"
+      />
+      <img
+        class="logo logo--stemm"
+        src="images/tohu_matua_white.png"
+        alt="Pūhoro STEMM Academy Logo"
+      />
+    </footer>
+
+    <script>
+      // Dan Carter is the best number 10 in the history of world rugby
+
+      function urlQueryParams() {
+        // Get the URL parameters part of the current URL
+        const queryString = window.location.search; 
+
+        // Get the value of each parameter
+        const urlParams = new URLSearchParams(queryString); 
+
+        // Print the URL parameter values to the console
+        console.log(`URL parameter values: ${urlParams}`);
+
+        // Change the URL to have the correct parameter names and values to reveal the link to the next page
+        const sport = urlParams.get('sport');
+        const number = urlParams.get('number');
+        if (sport == 'rugby' && number == '10') {
+          var mydiv = document.getElementById("next");
+          var link = document.createElement("a");
+          link.setAttribute("href", `${_$.urls}.html`);
+          link.innerText = "Impressive! Click here to go to the next page.";
+          mydiv.appendChild(link);
+        }
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>More JS</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>The Wonderful and Wacky Waikato Web Hack (EXTENSION)</h1>
+      </header>
+      <div class="main-content">
+        <h1>More JavaScript!</h1>
+        <p>You can pass information to JavaScript functions and that information can change what happens when the function is run. For example:</p>
+        <div class="codeblock">
+<pre>
+function add(x, y) {
+  let sum = x + y;
+  console.log(sum);
+}
+</pre>
+        </div>
+
+        <p>This function can take 2 numbers, add them together, then print the sum to the deveoper tools "console". You can run this function by typing the function name "add", followed by an open parenthesis "(", then typing any number you want for the first number, then typing a comma ",", then typing any number you want for the second number, then typing a close parenthesis, then pressing the "enter" key on the keyboard. For example, <code>add(6, 7)</code>.</p>
+        <p>Give it a try!</p>
+        <p id="next"></p>
+    </div>
+
+
+    <footer>
+      <img
+        class="logo logo--uni"
+        src="images/waikato_uni_logo.svg"
+        alt="Waikato Logo"
+      />
+      <img
+        class="logo logo--stemm"
+        src="images/tohu_matua_white.png"
+        alt="Pūhoro STEMM Academy Logo"
+      />
+    </footer>
+
+    <script>
+      // Keep paying attention to all of the code on each page.
+      // There are no more special numbers, but there might be special message somewhere...
+
+      function add(x, y) {
+        let sum = x + y;
+        console.log(sum);
+
+        if (sum == 100) {
+          var mydiv = document.getElementById("next");
+          var link = document.createElement("a");
+          link.setAttribute("href", "more_js.html");
+          link.innerText = "Keep up the good work! Click here to go to the next page.";
+          mydiv.appendChild(link);
+        }
+      }
+    </script>
+  </body>
+</html>

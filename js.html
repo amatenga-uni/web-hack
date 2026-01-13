@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JS</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>The Wonderful and Wacky Waikato Web Hack (EXTENSION)</h1>
+      </header>
+      <div class="main-content">
+        <h1>-- Extension Challenges --</h1>
+        <p>
+          To complete the extension challenges, you only need to progress to the next page of the website. There are no more special numbers for you to find. Each challenge will teach something about web development, then require you to put that learning into action.
+        </p>
+        <p>Good luck!</p>
+
+        <h1>JavaScript!</h1>
+        <p>JavaScript code helps to make a website dynamic and interactive. One way we can add JavaScript code to our website is by putting it inside of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script">HTML Script element</a>. If you inspect this webpage, you will notice there is a Script element that contains the following code:</p>
+        <div class="codeblock">
+<pre>
+function sayHello() {
+  alert("Hello!");
+}
+</pre>
+        </div>
+
+        <p>This means that when the browser loads the page, it will create a function called "sayHello". A function is a reusable block of code that performs a specific task. Whenever the "sayHello" function runs, the browser will pop up an alert box containing the text "Hello!".</p>
+        <p>You can run this function by opening the developer tools, going to the "console" tab, typing "sayHello()", then pressing the "enter" key on the keyboard. Give it a try!</p>
+        <p>The "console" tab in the developer tools allows you to write and run your own JavaScript code. In JavaScript, we run a function by writing it's name, followed by open and close parentheses. For example, "sayHello()".</p>
+        <p id="next"></p>
+    </div>
+
+
+    <footer>
+      <img
+        class="logo logo--uni"
+        src="images/waikato_uni_logo.svg"
+        alt="Waikato Logo"
+      />
+      <img
+        class="logo logo--stemm"
+        src="images/tohu_matua_white.png"
+        alt="Pūhoro STEMM Academy Logo"
+      />
+    </footer>
+
+    <script>
+      function sayHello() {
+        alert("Hello!");
+      }
+
+      function setupLink() {
+        var mydiv = document.getElementById("next");
+        var link = document.createElement("a");
+        link.setAttribute("href", "more_js.html");
+        link.innerText = "Good job! Click here to go to the next page.";
+        mydiv.appendChild(link);
+      }
+    </script>
+  </body>
+</html>
