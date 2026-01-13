@@ -15,7 +15,7 @@
       </header>
       <div class="main-content">
         <h1>URL Parameters!</h1>
-        <p>URL stands for Uniform Resource Locator. It tells the browser where to find specific resources (e.g. webpage, image, video). URL parameters are extra pieces of information added to the end of a URL, to pass data to a website. This is very userful for things like creating customised webpage content, filtering, and sorting.</p>
+        <p>URL stands for Uniform Resource Locator. It goes in the bar near the top of the browser, and it tells the browser where to find specific resources (e.g. webpage, image, video). URL parameters are extra pieces of information added to the end of a URL, to pass data to a website. This is very userful for things like creating customised webpage content, filtering, and sorting.</p>
         <p>URL parameters appear after a questions mark "?". Each parameter has a name (or key) and a value. The name and value are separated by an equals sign "=". For example,</p>
         <div class="codeblock">
 <pre>
@@ -37,6 +37,8 @@ https://amatenga-uni.github.io/web-hack/urls.html?firstname=aaron&lastname=maten
         </div>
 
         <br>
+
+        <p>Click on the check button to see your URL parameters get printed in the console.</p>
         <button onclick="urlQueryParams()">Check</button>
         
         <p id="next"></p>
@@ -67,7 +69,7 @@ https://amatenga-uni.github.io/web-hack/urls.html?firstname=aaron&lastname=maten
         const urlParams = new URLSearchParams(queryString); 
 
         // Print the URL parameter values to the console
-        console.log(`URL parameter values: ${urlParams}`);
+        console.log(`URL parameters: ${urlParams}`);
 
         // Change the URL to have the correct parameter names and values to reveal the link to the next page
         const sport = urlParams.get('sport');
